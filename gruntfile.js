@@ -19,41 +19,13 @@ module.exports = function(grunt){
         watch: {
             less: {
                 files: ['src/styles/**/*.less'],
-<<<<<<< HEAD
-                tasks: ['less:decelopment']
-=======
                 tasks: ['less:development']
-            }
-        },
-        replace: {
-            dev: {
-                options: {
-                    patterns: [
-                        {
-                            match: 'ENDERECO_DO_CSS',
-                            replacement: './styles/main.css'
-                        }
-                    ]
-                },
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ['src/index.html'],
-                        dest: 'dev/'
-                    }
-                ]
->>>>>>> htmlmin
             }
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
-<<<<<<< HEAD
-=======
-    grunt.loadNpmTasks('grunt-replace');
->>>>>>> htmlmin
     
     grunt.registerTask('default',['watch']);
     grunt.registerTask('build',['less:production']);
