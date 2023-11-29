@@ -41,12 +41,24 @@ module.exports = function(grunt){
                     }
                 ]
             }
+        },
+        htmlmin: {
+            dit: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'prebuild/index.html':'src/index.html'
+                }
+            }
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     
     grunt.registerTask('default',['watch']);
     grunt.registerTask('build',['less:production']);
